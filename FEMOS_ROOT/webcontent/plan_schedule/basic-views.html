@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='./fullcalendar/fullcalendar.css' />
+<link rel='stylesheet' type='text/css' href='./fullcalendar/fullcalendar.print.css' media='print' />
+<script type='text/javascript' src='./jquery/jquery-1.7.1.min.js'></script>
+<script type='text/javascript' src='./jquery/jquery-ui-1.8.17.custom.min.js'></script>
+<script type='text/javascript' src='./fullcalendar/fullcalendar.min.js'></script>
+<script type='text/javascript'>
+
+	$(document).ready(function() {
+		
+		var date = new Date();
+		
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		var h = date.getHours();
+		var mi = date.getMinutes();
+		
+		function retDate(dt)
+		{
+			var ret = '';
+			var yyyy = dt != null ? dt.getFullYear() : '';
+			var mm = dt != null ? dt.getMonth()+1 : '';
+			var dd = dt != null ? dt.getDate() : '';
+			var hh = dt != null ? dt.getHours() : '';
+			var mi = dt != null ? dt.getMinutes() : '';
+
+			if (dt != null)
+			{
+				ret = yyyy+'-'+getDateString(mm)+'-'+getDateString(dd)+' '+getDateString(hh)+':'+getDateString(mi);
+			}
+			else
+			{
+				ret = '';
+			}
+
+			return ret;
+		}
+
+		function getDateString(number_dt)
+		{
+			
+			var ret = '';
+			if (number_dt.toString().length == 1)
+			{
+				ret = '0'+number_dt;
+			}
+			else
+			{
+				ret = number_dt.toString();
+			}
+			return ret;
+		}
+			
+		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
+			weekends: false,
+			eventDrop: function(event,dayDelta,minuteDelta,allDay,revertFunc) // Drop callback 
+			{
+				alert(
+					event.title + " 은 " +
+					dayDelta + " 일 만큼 이동하고 " +
+					minuteDelta + " 분 만큼 이동함."
+				);
+			},
+			eventClick: function(event) // Click item
+			{
+				var mode = ''; 
+				if (mode == 'delete')
+				{
+					alert('삭제 실행');
+				}
+				else
+				{
+					alert('제목:'+event.title+'\n시작:'+retDate(event.start)+'\n종료:'+retDate(event.end));
+				}
+			},
+			eventResize: function(event,dayDelta,minuteDelta,revertFunc) // Item resize
+			{
+
+				alert(
+					event.title + " 은 " +
+					dayDelta + " 일 만큼 증가하고 " +
+					minuteDelta + " 분 만큼 증가함."
+				);
+			},
+			editable: true,
+			events: 
+			[
+				{
+					title: 'All Day Event',
+					start: new Date(y, m, 1)
+				},
+				{
+					title: 'Long Event',
+					start: new Date(y, m, d-5),
+					end: new Date(y, m, d-2)
+				},
+				{
+					id: 999,
+					title: 'Repeating Event',
+					start: new Date(y, m, d-3, 16, 0),
+					allDay: false
+				},
+				{
+					title: 'Meeting',
+					start: new Date(y, m, d, 10, 30),
+					allDay: false
+				},
+				{
+					title: 'Lunch',
+					start: new Date(y, m, d, 12, 0),
+					end: new Date(y, m, d, 14, 0),
+					allDay: false
+				},
+				{
+					title: 'Birthday Party',
+					start: new Date(y, m, d+1, 19, 0),
+					end: new Date(y, m, d+1, 22, 30),
+					allDay: false
+				},
+				{
+					title: 'Click for Google',
+					start: new Date(y, m, 28),
+					end: new Date(y, m, 29),
+					url: 'http://google.com/'
+				},
+				{
+					title: '테스트',
+					start: new Date(y, m, 1),
+					end: new Date(y, m, 2)
+				}
+			]
+		});
+	});
+
+</script>
+<style type='text/css'>
+
+	body {
+		margin-top: 40px;
+		text-align: center;
+		font-size: 14px;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+	}
+
+	#calendar {
+		width: 900px;
+		margin: 0 auto;
+	}
+
+</style>
+</head>
+<body>
+<div id='calendar'></div>
+</body>
+</html>

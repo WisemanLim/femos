@@ -1,0 +1,96 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Fouler - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/Fouler.res" /d "_DEBUG" /d "_AFXDLL" "D:\Project-old\Fouler\Fouler.rc"" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP211.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/Fouler.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Project-old\Fouler\Analysis.cpp"
+"D:\Project-old\Fouler\ChildFrm.cpp"
+"D:\Project-old\Fouler\Data.cpp"
+"D:\Project-old\Fouler\FieldSelect.cpp"
+"D:\Project-old\Fouler\Fouler.cpp"
+"D:\Project-old\Fouler\FoulerDoc.cpp"
+"D:\Project-old\Fouler\FoulerView.cpp"
+"D:\Project-old\Fouler\Generator.cpp"
+"D:\Project-old\Fouler\LeftView.cpp"
+"D:\Project-old\Fouler\MainFrm.cpp"
+"D:\Project-old\Fouler\NewData.cpp"
+"D:\Project-old\Fouler\Option.cpp"
+"D:\Project-old\Fouler\ProgressBar.cpp"
+"D:\Project-old\Fouler\Splash.cpp"
+"D:\Project-old\Fouler\CUSUM.cpp"
+"D:\Project-old\Fouler\HISTOGRAM.cpp"
+"D:\Project-old\Fouler\SHEWART.cpp"
+"D:\Project-old\Fouler\SPRT.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP211.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP212.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/Fouler.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Project-old\Fouler\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP212.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP213.tmp" with contents
+[
+opengl32.lib glu32.lib winmm.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Fouler.pdb" /debug /machine:I386 /out:"Debug/Fouler.exe" /pdbtype:sept 
+".\Debug\Analysis.obj"
+".\Debug\ChildFrm.obj"
+".\Debug\Data.obj"
+".\Debug\FieldSelect.obj"
+".\Debug\Fouler.obj"
+".\Debug\FoulerDoc.obj"
+".\Debug\FoulerView.obj"
+".\Debug\Generator.obj"
+".\Debug\LeftView.obj"
+".\Debug\MainFrm.obj"
+".\Debug\NewData.obj"
+".\Debug\Option.obj"
+".\Debug\ProgressBar.obj"
+".\Debug\Splash.obj"
+".\Debug\StdAfx.obj"
+".\Debug\CUSUM.obj"
+".\Debug\HISTOGRAM.obj"
+".\Debug\SHEWART.obj"
+".\Debug\SPRT.obj"
+".\Debug\Fouler.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP213.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+Analysis.cpp
+ChildFrm.cpp
+Data.cpp
+FieldSelect.cpp
+Fouler.cpp
+FoulerDoc.cpp
+FoulerView.cpp
+Generator.cpp
+LeftView.cpp
+MainFrm.cpp
+NewData.cpp
+Option.cpp
+ProgressBar.cpp
+Splash.cpp
+CUSUM.cpp
+HISTOGRAM.cpp
+SHEWART.cpp
+SPRT.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Fouler.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

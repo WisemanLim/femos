@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+           "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="NameSpace">
+	
+	
+	<select id="rQRIdCheck" parameterClass="qrcs.site.action.RequestIdRecord" resultClass="java.lang.Integer">
+		SELECT COUNT(ID) AS CNT
+		FROM TBL_QR_USER
+		WHERE ID = #id#
+	</select>
+	
+	<select id="rQRNameCheck" parameterClass="qrcs.site.action.RequestIdRecord" resultClass="java.lang.Integer">
+		SELECT COUNT(NAME) AS CNT
+		FROM TBL_QR_USER
+		WHERE NAME = #name#
+	</select>
+	
+	<insert id="cinsertUser"  parameterClass="qrcs.site.action.RequestIdRecord"  >
+ 	  INSERT INTO TBL_QR_USER (SEQ, ID, PASSWORD, NAME, EMAIL,  REQUEST_DATE, IS_ADMIN, APROVED_DATE, REGISTERED_DATE)
+      SELECT NVL(MAX(SEQ), 0) + 1 AS SEQ, #id#, #password#, #name#, #email#, SYSDATE, 'N', '', SYSDATE
+      FROM TBL_QR_USER       
+    </insert>
+	
+	<select id="rUserTotalCount" resultClass="java.lang.String">
+		select count(*) from TBL_QR_USER
+	</select>
+	
+	
+	<resultMap id="resultUserList" class="qrcs.site.vo.QRUserListVo">
+		<result property="seq" column="SEQ" />
+		<result property="id" column="ID" />	
+		<result property="name" column="NAME" />
+		<result property="email" column="EMAIL" />
+		<result property="isAdmin" column="IS_ADMIN" />
+		<result property="requestDate" column="REQUEST_DATE" />		
+	</resultMap>
+	
+	<select id="rUserList" resultMap="resultUserList" parameterClass="java.lang.Integer">              
+		SELECT RNUM, SEQ, ID, NAME, EMAIL, IS_ADMIN, REQUEST_DATE
+		FROM (
+			SELECT ROWNUM AS RNUM, SEQ, ID, NAME, EMAIL, IS_ADMIN, REQUEST_DATE
+			FROM TBL_QR_USER
+			ORDER BY REQUEST_DATE DESC
+		) A
+		WHERE RNUM BETWEEN (((#page# - 1) * 10) + 1) AND #page# * 10
+	</select>
+	
+	<update id="uLoginAccept" parameterClass="qrcs.site.vo.QRCodeSiteVo">
+	   UPDATE  TBL_QR_USER 
+	   SET IS_ADMIN = #isAdmin#, APROVED_DATE = SYSDATE
+	   WHERE ID = #id#
+	</update>
+	
+</sqlMap>

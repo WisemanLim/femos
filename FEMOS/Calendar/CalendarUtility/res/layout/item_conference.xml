@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<LinearLayout
+		android:layout_width="0dip" android:layout_height="fill_parent"
+		android:orientation="vertical" android:layout_weight="1">
+		<LinearLayout
+			android:layout_width="fill_parent" android:layout_height="0dip"
+			android:layout_weight="1">
+			<TextView
+				android:id="@+id/tvProjectTitle" android:text="Skt Paperless office"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" 
+				android:singleLine="true"/>
+			<ImageView
+				android:id="@+id/imgNew"
+				android:layout_width="20px"  android:layout_height="20px"
+				/>
+		</LinearLayout>
+		<TextView
+			android:id="@+id/tvProjectName" android:text="Paperless office Kick-off"
+			android:layout_width="wrap_content" android:layout_height="0dip"
+			android:layout_weight="1" android:singleLine="true"/>
+		<TextView
+			android:id="@+id/tvProjectOwner" android:text="Lee/T-Tower 7th"
+			android:layout_width="wrap_content" android:layout_height="0dip"
+			android:layout_weight="1" android:singleLine="true"/>
+		<TextView
+			android:id="@+id/tvProjectTime" android:text="2010.12.22"
+			android:layout_width="wrap_content" android:layout_height="0dip"
+			android:layout_weight="1" android:singleLine="true"/>
+	</LinearLayout>
+	
+	<LinearLayout
+		android:layout_width="0dip" android:layout_height="fill_parent"
+		android:orientation="vertical" android:layout_weight="0.3">
+		<LinearLayout
+			android:layout_width="fill_parent" android:layout_height="0dip"
+			android:layout_weight="1">
+			<ImageView
+				android:id="@+id/imgPerson"
+				android:layout_width="20px"  android:layout_height="20px"
+				/>
+			<TextView
+				android:id="@+id/tvName" android:text="NamGung"
+				android:layout_width="wrap_content" android:layout_height="wrap_content" 
+				android:singleLine="true"/>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="fill_parent" android:layout_height="0dip"
+			android:layout_weight="1">
+			<ImageView
+				android:id="@+id/imgShare"
+				android:layout_width="20px"  android:layout_height="20px"
+				/>
+			<ImageView
+				android:id="@+id/imgLock"
+				android:layout_width="20px"  android:layout_height="20px"
+				/>
+		</LinearLayout>		
+	</LinearLayout>
+</LinearLayout>

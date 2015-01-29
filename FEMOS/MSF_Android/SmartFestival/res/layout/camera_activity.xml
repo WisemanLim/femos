@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 미리보기 -->
+
+    <SurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:background="@drawable/camera_guide" />
+
+    <!-- 셔터 버튼 -->
+
+    <Button
+        android:id="@+id/shutter"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:background="@drawable/sel_camera" />
+
+</FrameLayout>

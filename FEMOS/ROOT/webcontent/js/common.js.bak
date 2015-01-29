@@ -1,0 +1,55 @@
+function replaceAll(str,str_base,str_change)
+{
+	return str.replace(/str_base/gi, str_change);
+}
+
+function CheckForm(objs,Msgs,inner_layer)
+{
+	var objs = objs.split(',');
+	var Msg = Msgs.split(',');
+	
+	var ret = true;
+	
+	document.getElementById(inner_layer).innerHTML = '';
+	
+	for (var i = 0; i< objs.length ;i++)
+	{
+		tmpObj = document.getElementById(objs[i]);
+		if(tmpObj)
+		{
+			if (tmpObj.value.length == 0)
+			{
+				document.getElementById(inner_layer).innerHTML = Msg[i];
+				tmpObj.focus();
+				ret = false;
+				break;
+			}
+		}
+	}
+	return ret;
+}
+
+function ValidNumber(obj)
+{
+	var str=obj.value;
+	var strTemp = obj.value;
+	
+	if (str.length==0){
+		return false;
+	}
+	
+	for(var i=0; i<str.length; i++){
+		if ( !('0'<=str.charAt(i) && str.charAt(i)<='9') ) {
+			strTemp = strTemp.substr(0, i) + strTemp.substr(i+1, strTemp.length-i);			
+		}
+	}
+	
+	if( strTemp != str )
+	{
+		obj.value = strTemp;
+		obj.focus();
+		obj.select();
+		return false;
+	}
+	return true;
+}

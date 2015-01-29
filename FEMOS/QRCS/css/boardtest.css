@@ -1,0 +1,14 @@
+textarea {color:#000000; font-family: "±¼¸²"; font-size:9pt;
+	line-hight:120%; background-color: #FFFFFF; boarder:1 solid #999999 }
+	
+td {color:#3f3f3f; font-family: "±¼¸²"; font-size:9pt; line-height: 170%;}
+
+td a{color:#333377; font-family: "±¼¸²"; font-size: 9pt; line-height: 170%; text-decoration: none;}
+
+td a:hover{color:#3366CC; font-family: "±¼¸²"; font-size: 9pt; line-height: 170%; text-decoration: underline;}
+
+input {color:#000000; font-family: "±¼¸²"; font-size: 9pt; line-height: 120%; background-color:#FFFFFF; border: 1 soild #999999}
+
+.inputb {border-bottom: #999999 1px solid; border-left: #cecece 1px soild; border-right: #999999 1px soild; border-top: #cecece 1px soild; color: #000000;
+font-size: 9pt; background-color: #EDEDED;}
+

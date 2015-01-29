@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+	<title>Bar Code Scanner</title>
+	<link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.1.0.css"
+		type="text/css">
+	<link rel="stylesheet" href="main.css" type="text/css">
+	<script type="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></script>
+	<script type="text/javascript"
+		src="jquery.mobile/jquery.mobile-1.1.0.js"></script>
+	<!-- Uncomment following line to access PhoneGap APIs (not necessary to use PhoneGap to package web app) -->
+	<!-- <script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script> -->
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript" charset="utf-8" src="barcodescanner.js"></script>
+	<script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
+	<!-- <script type="text/javascript" charset="utf-8" src="main.js"></script> --> <!-- tmt3p2.js로 대체 -->
+	<script type="text/javascript" charset="utf-8" src="tmt3p2.js"></script>
+	
+	<!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />-->
+	<!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+	<!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>-->
+	
+	<script type="text/javascript" charset="utf-8">
+		document.addEventListener("deviceready", onDeviceReady, false);
+		function onDeviceReady() {
+			window.plugins.childBrowser.openExternal("http://www.google.com");
+		}
+	</script>
+</head>
+<body id="stage" class="theme">
+	<h1>Barcode Scanner and Encoder</h1>
+	<h2>PhoneGap Barcode Scanner Plugin</h2>
+	<a href="#" class="btn" onclick="scanCode();">Scan Code</a>
+	<a href="#" class="btn enc" onclick="encodeText();">Encode Text</a>
+	<a href="#" class="btn enc" onclick="encodeEmail();">Encode Email</a>
+	<a href="#" class="btn enc" onclick="encodePhone();">Encode Phone</a>
+	<a href="#" class="btn enc" onclick="encodeSMS();">Encode SMS</a>
+</body>
+</html>

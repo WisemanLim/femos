@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	default-autowire="byName">
+
+	<!-- Utils -->
+	<bean id="paging" class="miv.btb.util.Paging" scope="prototype"/>
+
+	<!-- LoginActon  -->
+	<bean id="loginCheck" class="qrcs.login.service.LoginService" scope="prototype"/>
+	<bean id="loginDao" class="qrcs.login.dao.LoginDAO" />
+	<bean id="loginInterceptor" class="qrcs.login.dao.LoginInterceptor"/>
+
+	<!--  MainAction -->
+	<bean id="mainservice" class="qrcs.main.service.MainService" scope="prototype">
+		<property name="mainDao" ref="mainDao"/>
+	</bean>
+	<bean id="mainDao" class="qrcs.main.dao.MainDAO" /> 
+	<bean id="MainAction" class="qrcs.main.action.MainAction" scope="prototype">
+		<constructor-arg ref="mainservice"/>
+	</bean>
+
+	<!-- QRCodeListAction -->
+	<bean id="qrCodeListDao" class="qrcs.each.dao.QRCodeListDAO"/> 
+	<bean id="qrCodeListService" class="qrcs.each.service.QRCodeListService" scope="prototype">
+		<property name="qrCodeListDao" ref="qrCodeListDao"/>
+	</bean>
+	<bean id="QRCodeListAction" class="qrcs.each.action.QRCodeListAction" scope="prototype">
+		<constructor-arg ref="qrCodeListService"/>
+	</bean>		
+	
+	<!-- QRBatchListAction -->
+	<bean id="qrBatchListDao" class="qrcs.batch.dao.QRBatchListDAO"/> 
+	<bean id="qrBatchListService" class="qrcs.batch.service.QRBatchListService" scope="prototype">
+		<property name="qrBatchListDao" ref="qrBatchListDao"/>
+	</bean>
+	<bean id="QRBatchListAction" class="qrcs.batch.action.QRBatchListAction" scope="prototype">
+		<constructor-arg ref="qrBatchListService"/>
+	</bean>	
+	
+	<!-- QRSiteAction -->
+	<bean id="qrCodeSiteDao" class="qrcs.site.dao.QRCodeSiteDAO"/> 
+	<bean id="qrCodeSiteService" class="qrcs.site.service.QRCodeSiteService" scope="prototype">
+		<property name="qrCodeSiteDao" ref="qrCodeSiteDao"/>
+	</bean>
+	<bean id="QRSiteAction" class="qrcs.site.action.QRSiteAction" scope="prototype">
+		<constructor-arg ref="qrCodeSiteService"/>
+	</bean>	
+	<bean id="RequestIdAction" class="qrcs.site.action.RequestIdAction" scope="prototype">
+		<constructor-arg ref="qrCodeSiteService"/>
+	</bean>	
+	
+	
+
+</beans>

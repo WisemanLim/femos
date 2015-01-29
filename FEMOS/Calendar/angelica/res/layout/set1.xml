@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+	<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content">
+	
+		<Button android:id="@+id/Button01" android:layout_width="wrap_content" android:layout_height="50dip" android:text="&lt;"></Button>
+		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" 
+	    android:id="@+id/tv1" android:text="yyyy"></TextView>
+		<Button android:id="@+id/Button02" android:layout_width="wrap_content" android:layout_height="50dip" android:text="&gt;"></Button>
+		
+		<Button android:id="@+id/Button03" android:layout_width="wrap_content" android:layout_height="50dip" android:text="&lt;"></Button>
+		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" 
+	    android:id="@+id/tv2" android:text="MM"></TextView>
+		<Button android:id="@+id/Button04" android:layout_width="wrap_content" android:layout_height="50dip" android:text="&gt;"></Button>
+		
+		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" 
+	    android:id="@+id/tv3" android:text="dd"></TextView>
+		
+	</LinearLayout>
+
+<LinearLayout android:id="@+id/calendar_lLayout" 
+android:layout_width="wrap_content" android:layout_height="wrap_content">
+</LinearLayout>
+
+</LinearLayout>

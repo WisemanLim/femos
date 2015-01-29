@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, ActMain!</string>
+    <string name="app_name">Utility</string>
+    <string name="login_title">Paperless Office</string>
+    <string name="login_button">로그인</string>
+    <string name="login_check">아이디(사번)저장</string>
+</resources>

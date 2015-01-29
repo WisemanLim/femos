@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+           "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="NameSpace">
+
+	<resultMap id="resultMapOfOperator" class="qrcs.login.vo.LoginVo">
+		<result property="id" column="ID" />
+		<result property="password" column="PASSWORD" />	
+		<result property="name" column="NAME" />
+		<result property="isAdmin" column="IS_ADMIN" />
+	</resultMap>
+	
+	<select id="pComLogin" parameterClass="qrcs.login.vo.User" resultMap="resultMapOfOperator">
+		SELECT ID, PASSWORD, NAME, IS_ADMIN 
+		FROM TBL_QR_USER 
+		WHERE ID = #id# 
+		  AND PASSWORD = #password#	
+	</select> 
+	
+	<select id="rComIDPW" parameterClass="qrcs.login.vo.User" resultMap="resultMapOfOperator">
+		SELECT ID, PASSWORD, NAME, IS_ADMIN 
+		FROM TBL_QR_USER 
+		WHERE NAME = #name# 
+		  AND EMAIL = #email#
+		  AND ID = #id#	
+	</select> 
+	
+	<select id="rSelectID" parameterClass="qrcs.login.vo.User" resultMap="resultMapOfOperator">
+		SELECT ID, PASSWORD, NAME, IS_ADMIN 
+		FROM TBL_QR_USER 
+		WHERE NAME = #name# 
+		  AND EMAIL = #email#		  	
+	</select>
+	
+	<select id="pComLoginCheck" parameterClass="java.lang.String" resultClass="java.lang.String">
+		SELECT FTN_COM_LOGIN_CHECK(#id#) FROM DUAL 		
+	</select>
+	
+	<select id="pComLoginPassCountClear" parameterClass="java.lang.String" resultClass="java.lang.String">
+		UPDATE TBL_MS_OPERATOR SET PASSCNT = 0
+		WHERE ID = #id#				
+	</select> 
+	
+	<update id="uAdminPasswordReset" parameterClass="java.lang.String" >
+		UPDATE TBL_QR_USER SET PASSWORD = #pw#
+		WHERE ID = 'admin'			
+	</update> 
+	
+	<update id="uPasswordReset" parameterClass="qrcs.login.vo.LoginVo" >
+		UPDATE TBL_QR_USER SET PASSWORD = #password#
+		WHERE ID = #id#			
+	</update> 
+
+
+	<resultMap id="resultNotice" class="qrcs.main.vo.NoticeVo">
+		<result property="num" column="NUM" />
+		<result property="seq" column="SEQ" />	
+		<result property="title" column="TITLE" />
+		<result property="id" column="ID" />
+		<result property="author" column="NAME" />
+		<result property="writeDate" column="REGISTERED_DATE" />
+		<result property="viewCount" column="VIEW_CNT" />
+	</resultMap> 
+		
+	<select id="Notice" resultMap="resultNotice">
+		SELECT ROWNUM AS NUM, A.SEQ AS SEQ, A.TITLE AS TITLE
+		     , A.ID AS ID, B.NAME AS NAME
+		     , TO_CHAR(A.REGISTERED_DATE, 'YYYY-MM-DD HH24:MI:SS') AS REGISTERED_DATE
+		     , A.VIEW_CNT AS VIEW_CNT
+		FROM TBL_MS_NOTICE A
+		   , TBL_MS_OPERATOR B
+		WHERE ROWNUM  <![CDATA[ <= ]]> 10 
+		AND A.ID = B.ID
+		ORDER BY A.SEQ DESC	
+	</select> 
+	
+
+</sqlMap>

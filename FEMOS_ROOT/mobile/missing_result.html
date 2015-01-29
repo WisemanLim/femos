@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta name = "viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="안성세계민속축전" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="http://www.inven.co.kr/mobile/lib/style/layout.css?v=20120104a"/>
+<script type="text/javascript" src="http://www.inven.co.kr/common/lib/js/common.js"></script>
+<script type="text/javascript" src="http://www.inven.co.kr/common/lib/js/xml.js"></script>
+<script type="text/javascript" src="http://www.inven.co.kr/mobile/lib/js/common.js"></script>
+<link rel = "apple-touch-icon" href = "http://img.inven.co.kr/image/mobile/common/logo_iphone.png" />
+<style>
+body {
+	height: 100%;
+	width: 100%;
+	background:#5CD1E5;
+	font-size:10pt;
+}
+
+#layout-container {
+	position: absolute;
+	width:99%;
+	height: 98%;
+}
+
+#layout-content {
+	text-align:center;
+	position:absolute;
+	top:20%;
+	width:100%;
+}
+#missing_info {
+	width:80%;
+	text-align:center;
+	margin:0 auto;
+}
+#missing_info_title {
+	background: #4374D9;
+	padding: 4px;
+	width: 100%;
+	color: #fff;
+	background-image: url(img/bt_bg01.gif);
+}
+#missing_info_result {
+	background:#fff;
+	padding:4px;
+	width:100%;
+}
+#missing_result_history {
+	width:80%;
+	text-align:center;
+	margin:0 auto;
+}
+#missing_result_history_title {
+	background: #6799FF;
+	padding: 4px;
+	width: 100%;
+	color: #fff;
+	background-image: url(img/bt_bg02.gif);
+}
+#missing_result_item {
+	background:#fff;
+	width:100%;
+	padding:4px;
+	text-align:left;
+	font-weight:normal;
+	border-top:1px solid #ddd;
+}
+#missing_result_item div {
+	padding:5px;
+}
+#missing_result_input_area {
+	width:80%;
+	text-align:center;
+	margin:0 auto;
+}
+#missing_result_input_title {
+	background: #6799FF;
+	padding: 4px;
+	width: 100%;
+	color: #fff;
+	background-image: url(img/bt_bg02.gif);
+}
+#missing_result_input {
+	background:#fff;
+	width:100%;
+	padding:4px;
+	text-align:left;
+	font-weight:normal;
+	border-top:1px solid #ddd;
+}
+
+</style>
+</head>
+<body>
+<div id="layout-container">
+	<div id="layout-content">
+		<div id="missing_info">
+			<div id="missing_info_title"><strong>미아님</strong>의 결과입니다.</div>
+			<div id="missing_info_result">
+				<table width="100%" cellpadding="3" cellspacing="1">
+					<colgroup>
+						<col width="100px"/>
+						<col width="*"/>
+					</colgroup>
+					<tr>
+						<th style="text-align:left;">보호자 성명:</th>
+						<td style="text-align:left;">보호자1</td>
+					</tr>
+					<tr>
+						<th style="text-align:left;">보호자 연락처:</th>
+						<td style="text-align:left;"><a href="#">010-5458-7618</a></td>
+					</tr>
+			  </table>
+		  </div>
+		</div>
+		
+		<div id="missing_result_history" style="margin-top:10px;">
+			<div id="missing_result_history_title"><strong>조치이력</div>
+			<div id="missing_result_item">
+				<div>
+					1.피보호자의 QR태그 스캔 후 <br/>
+					보호자에게 연락
+				</div>
+				<div>
+					2.연락결과 보호자와 거리가 멀어 가까운 <br/>보호소로 인솔
+				</div>
+			</div>
+		</div>
+		
+		<div id="missing_result_input_area" style="margin-top:10px;">
+			<div id="missing_result_input_title"><strong>조치내용 입력</div>
+			<div id="missing_result_input">
+				<textarea id="result" name="result" style="width:100%;height:80px;"></textarea>
+			</div>
+		</div>
+	  <div style="text-align: center; margin: 0 auto; width: 80%; margin-top: 10px;">
+		<!--button>전송</button-->
+		<img src="img/sub_bt_01.png" alt="" width="179" height="39" />
+        </div>
+	</div>
+</div>
+</body>
+</html>
+

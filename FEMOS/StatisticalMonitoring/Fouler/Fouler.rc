@@ -1,0 +1,691 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Fouler.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SPLASH              BITMAP  DISCARDABLE     "res\\Splash.bmp"
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Fouler.ico"
+IDR_FOULERTYPE          ICON    DISCARDABLE     "res\\FoulerDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+IDB_ICONS               BITMAP  DISCARDABLE     "res\\icons.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  23, 20
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    SEPARATOR
+    SEPARATOR
+    BUTTON      ID_EDIT_PLAY
+    SEPARATOR
+    SEPARATOR
+    BUTTON      ID_EDIT_PAUSE
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New File\tCtrl+N",           ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Statusbar",                  ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Option...",                  ID_TOOL_OPTION
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   ID_APP_ABOUT
+    END
+END
+
+IDR_FOULERTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New File\tCtrl+N",           ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Pre&view",                    ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "New Data",                    ID_EDIT_NEWDATA
+        MENUITEM "Play",                        ID_EDIT_PLAY
+        MENUITEM "Pause",                       ID_EDIT_PAUSE
+        MENUITEM "Clear All",                   ID_EDIT_CLEAR_ALL
+        MENUITEM "Analysis",                    ID_EDIT_ANALYSIS
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Statusbar",                  ID_VIEW_STATUS_BAR
+        MENUITEM "&Font",                       ID_VIEW_CHANGEFONT
+        MENUITEM SEPARATOR
+        MENUITEM "&Histogram\tCtrl+1",          ID_VIEW_HISTOGRAM
+        MENUITEM "She&wart Chart\tCtrl+2",      ID_VIEW_SHEWART
+        MENUITEM "&CUSUM Chart\tCtrl+3",        ID_VIEW_CUSUM
+        MENUITEM "S&PRT Chart\tCtrl+4",         ID_VIEW_SPRT
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Option...",                  ID_TOOL_OPTION
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icon",               ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About...",                   ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "+",            ID_EDIT_INCREASE_SPEED, ASCII,  NOINVERT
+    "-",            ID_EDIT_DECREASE_SPEED, ASCII,  NOINVERT
+    "1",            ID_VIEW_HISTOGRAM,      VIRTKEY, CONTROL, NOINVERT
+    "2",            ID_VIEW_SHEWART,        VIRTKEY, CONTROL, NOINVERT
+    "3",            ID_VIEW_CUSUM,          VIRTKEY, CONTROL, NOINVERT
+    "4",            ID_VIEW_SPRT,           VIRTKEY, CONTROL, NOINVERT
+    "A",            ID_EDIT_SELECT_ALL,     VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "G",            ID_EDIT_NEWDATA,        VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 286, 267
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Control Chart Analyzer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_BUTTON_HOMEPAGE,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,3,4,280,256
+    CONTROL         131,IDC_STATIC,"Static",SS_BITMAP,0,0,250,200
+END
+
+IDD_DIALOG_NEWDATA DIALOG DISCARDABLE  0, 0, 219, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Data Generation Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_DATANO,63,11,82,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_DATANO,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,145,9,7,17
+    EDITTEXT        IDC_EDIT_AVERAGE,63,27,82,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DEVIATION,63,43,82,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MOVERATE,63,59,82,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_DISTRIBUTION,63,75,82,70,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,157,14,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,157,31,50,14
+    RTEXT           "Average :",IDC_STATIC,12,29,47,8
+    RTEXT           "Deviation :",IDC_STATIC,12,45,47,8
+    RTEXT           "Increase Rate :",IDC_STATIC,12,61,47,8
+    RTEXT           "Data No :",IDC_STATIC,12,13,47,8
+    RTEXT           "Distribution :",IDC_STATIC,12,77,47,8
+END
+
+IDD_SPLASH DIALOG DISCARDABLE  0, 0, 319, 303
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS1,"msctls_progress32",WS_BORDER,
+                    0,281,319,6
+    CONTROL         131,IDC_STATIC,"Static",SS_BITMAP,0,0,320,305
+    LTEXT           "Loading...",IDC_STATIC_SPLASH,124,292,142,15
+END
+
+IDD_DIALOG_ANALYSIS DIALOG DISCARDABLE  0, 0, 219, 130
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Analysis Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_THETAZERO,71,11,77,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DEVIATION,71,27,77,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_K_CUSUM,71,43,77,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_H_CUSUM,71,59,77,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_ALPHA,71,75,77,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_BETA,71,91,77,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SUBGROUPSIZE,71,107,77,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_SUBGROUP,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,152,106,6,14
+    DEFPUSHBUTTON   "OK",IDOK,159,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,159,24,50,14
+    RTEXT           "sigma :",IDC_STATIC,12,29,55,8
+    RTEXT           "Control Limit",IDC_STATIC,12,45,55,8
+    RTEXT           "h(for CUSUM) :",IDC_STATIC,12,61,55,8
+    RTEXT           "theta0 :",IDC_STATIC,12,13,55,8
+    RTEXT           "alpha :",IDC_STATIC,12,77,55,8
+    RTEXT           "beta :",IDC_STATIC,12,93,55,8
+    RTEXT           "SubGroup No:",IDC_STATIC,12,109,55,8
+END
+
+IDD_DIALOG_FIELDSELECT DIALOG DISCARDABLE  0, 0, 195, 112
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Select Field"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_FIELD,7,22,56,83,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,138,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,138,24,50,14
+    LTEXT           "Select a field which you want to open",IDC_STATIC,8,8,
+                    124,8
+    EDITTEXT        IDC_EDIT_FIELD0,75,44,50,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "=",IDC_STATIC,67,45,8,8
+    LTEXT           "+",IDC_STATIC,129,46,8,8
+    EDITTEXT        IDC_EDIT_CONSTANT,138,44,50,12,ES_AUTOHSCROLL
+    LTEXT           "+",IDC_STATIC,67,62,8,8
+    LTEXT           "*",IDC_STATIC,129,62,8,8
+    EDITTEXT        IDC_EDIT_FIELD1,75,60,50,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_CO1,138,60,50,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "+",IDC_STATIC,67,78,8,8
+    LTEXT           "*",IDC_STATIC,129,78,8,8
+    EDITTEXT        IDC_EDIT_FIELD2,75,76,50,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_CO2,138,76,50,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "+",IDC_STATIC,67,94,8,8
+    LTEXT           "*",IDC_STATIC,129,94,8,8
+    EDITTEXT        IDC_EDIT_FIELD3,75,92,50,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_CO3,138,92,50,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Input Data",IDC_STATIC,67,28,40,8
+END
+
+IDD_DIALOG_OPTION_GENERAL DIALOG DISCARDABLE  0, 0, 132, 180
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_DIALOG_OPTION_COLOR DIALOG DISCARDABLE  0, 0, 219, 182
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Color"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Text Color",IDC_BUTTON_BACKGROUND,70,10,51,14
+    PUSHBUTTON      "CUSUM +",IDC_BUTTON_COLOR1,70,28,51,14
+    PUSHBUTTON      "Reference",IDC_BUTTON_COLOR2,70,46,51,14
+    PUSHBUTTON      "CUSUM -",IDC_BUTTON_COLOR3,70,64,51,14
+    PUSHBUTTON      "Percentage",IDC_BUTTON_COLOR4,70,82,51,14
+    PUSHBUTTON      "Data",IDC_BUTTON_COLOR5,70,100,51,14
+    PUSHBUTTON      "Alert",IDC_BUTTON_COLOR6,70,118,51,14
+    PUSHBUTTON      "BackGround",IDC_BUTTON_COLOR7,70,136,51,14
+    PUSHBUTTON      "Grid",IDC_BUTTON_COLOR8,70,154,51,14
+    LTEXT           "HHHHHHHHH",IDC_STATIC_BACKGROUND,16,12,47,12
+    LTEXT           "HHHHHHHHH",IDC_STATIC_COLOR1,16,30,47,12
+    LTEXT           "HHHHHHHHH",IDC_STATIC_COLOR2,16,48,47,12
+    LTEXT           "HHHHHHHHH",IDC_STATIC_COLOR3,16,66,47,12
+    LTEXT           "HHHHHHHHH",IDC_STATIC_COLOR4,16,84,47,12
+    LTEXT           "HHHHHHHHH",IDC_STATIC_COLOR5,16,102,47,12
+    LTEXT           "HHHHHHHHH",IDC_STATIC_COLOR6,16,120,47,12
+    LTEXT           "HHHHHHHHH",IDC_STATIC_COLOR7,16,138,47,12
+    LTEXT           "HHHHHHHHH",IDC_STATIC_COLOR8,16,156,47,12
+    PUSHBUTTON      "Default",IDC_BUTTON_COLOR_DEFAULT,150,118,51,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Control Chart Analyzer\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Fouler\0"
+            VALUE "LegalCopyright", "Copyright (C) 2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Fouler.EXE\0"
+            VALUE "ProductName", "Control Chart Analyzer\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 264
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_DIALOG_NEWDATA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 95
+    END
+
+    IDD_DIALOG_ANALYSIS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_DIALOG_FIELDSELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 188
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 105
+    END
+
+    IDD_DIALOG_OPTION_GENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 125
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+
+    IDD_DIALOG_OPTION_COLOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_WAVE                WAVE    DISCARDABLE     "res\\Alarm.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_NEWDATA DLGINIT
+BEGIN
+    IDC_COMBO_DISTRIBUTION, 0x403, 20, 0
+0x6f4e, 0x6d72, 0x6c61, 0x4420, 0x7369, 0x7274, 0x6269, 0x7475, 0x6f69, 
+0x006e, 
+    IDC_COMBO_DISTRIBUTION, 0x403, 21, 0
+0x6e55, 0x6669, 0x726f, 0x206d, 0x6944, 0x7473, 0x6972, 0x7562, 0x6974, 
+0x6e6f, "\000" 
+    IDC_COMBO_DISTRIBUTION, 0x403, 21, 0
+0x6f50, 0x7369, 0x6f73, 0x206e, 0x6944, 0x7473, 0x6972, 0x7562, 0x6974, 
+0x6e6f, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Control Chart Analyzer"
+    IDR_FOULERTYPE          "\nControl Chart Analyzer\nControl Chart Analyzer\n\n\nControl Chart Analyzer.Document\nControl Chart Analyzer Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Control Chart Analyzer"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_HISTOGRAM       "Show the histogram.\nHISTOGRAM"
+    ID_VIEW_SHEWART         "Show the Shewart chart.\nSHEWART CHART"
+    ID_VIEW_CUSUM           "Show the CUSUM chart.\nCUSUM CHART"
+    ID_VIEW_SPRT            "Show the SPRT chart.\nSPRT CHART"
+    ID_TOOL_OPTION          "Set option."
+    ID_EDIT_PLAY            "Start the data generation.\nStart"
+    ID_EDIT_PAUSE           "Stop the data generation.\nPause"
+    ID_EDIT_ANALYSIS        "Set Up Analysis Information"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_COMBO                "Display mode.\nDisplay Mode"
+    ID_SLIDER               "Generation Speed.\nGeneration Speed"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+    ID_ST_TIME              "Time=>"
+    ID_ST_DATE              "Date=>"
+    ID_ST_DATANO            "                  "
+    ID_ST_SPEED             "Gen Speed=>"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_CHANGEFONT      "Change Font"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Fouler.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

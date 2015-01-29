@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/index_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dip" >
+
+        <Button
+            android:id="@+id/join_festival_button"
+            android:layout_width="120dip"
+            android:layout_height="120dip"
+            android:layout_margin="10dip"
+            android:background="@drawable/sel_main_btn_01" />
+
+        <Button
+            android:id="@+id/satisfaction_rating_button"
+            android:layout_width="120dip"
+            android:layout_height="120dip"
+            android:layout_margin="10dip"
+            android:layout_toRightOf="@id/join_festival_button"
+            android:background="@drawable/sel_main_btn_02" />
+
+        <Button
+            android:id="@+id/inconvenience_report_button"
+            android:layout_width="120dip"
+            android:layout_height="120dip"
+            android:layout_below="@id/join_festival_button"
+            android:layout_margin="10dip"
+            android:background="@drawable/sel_main_btn_03" />
+
+        <Button
+            android:id="@+id/guest_check"
+            android:layout_width="120dip"
+            android:layout_height="120dip"
+            android:layout_below="@id/satisfaction_rating_button"
+            android:layout_margin="10dip"
+            android:layout_toRightOf="@id/inconvenience_report_button"
+            android:background="@drawable/sel_main_btn_04" />
+    </RelativeLayout>
+
+</LinearLayout>

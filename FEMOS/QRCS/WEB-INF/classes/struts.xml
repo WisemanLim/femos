@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts
+Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>	
+	<package name="default" extends="struts-default, spring-default" namespace="">
+
+		<interceptors>
+			<interceptor name="login" class="qrcs.login.dao.LoginInterceptor" />
+			<interceptor-stack name= "mivStack" >
+				<interceptor-ref name= "defaultStack" /> 	
+				<interceptor-ref name= "login" />							
+			</interceptor-stack> 
+		</interceptors>
+		<default-interceptor-ref name="mivStack"/>
+
+		<global-results>
+			<result name="login">/qrcs/common/index.html</result>		
+			<result name="error">/ms/site/fail.jsp</result>		
+			<result name="ret">/qrcs/common/ret.jsp</result>	
+			<result name="none">/qrcs/common/none.jsp</result>	
+		</global-results>
+		
+ 	    <action name="LoginAction" class="qrcs.login.action.LoginAction"	method="login">  
+ 	   		<interceptor-ref name= "defaultStack" /> 	    
+			<result name="success" type="chain">MainAction</result>			
+		</action>		
+		
+		<action name="LogoutAction" class="qrcs.login.action.LogoutAction">  
+			<interceptor-ref name= "defaultStack" /> 	    
+			<result name="success" >/qrcs/common/ComM_logout.jsp</result>			
+		</action>	
+		
+		<action name="RequestIdAction" class="RequestIdAction"  method="Request">  
+			<interceptor-ref name= "defaultStack" /> 	    
+			<result name="success" >/qrcs/site/RequestID.jsp</result>	
+			<result name="list" >/qrcs/site/RequestID.jsp</result>			
+		</action>	
+		
+		<action name="FindIDPWAction" class="qrcs.site.action.FindIDPWAction"  method="Request">  
+			<interceptor-ref name= "defaultStack" /> 	    
+			<result name="success" >/qrcs/site/FindIDPW.jsp</result>	
+			<result name="list" >/qrcs/site/FindIDPW.jsp</result>			
+		</action>	
+			
+		<action name="MainAction" class="MainAction">
+			<result name="success">/qrcs/main/QRCS.jsp</result>
+		</action>		
+		
+		<action name="QRCodeListAction" class="QRCodeListAction">
+			<result name="success">/qrcs/each/QRCodeList.jsp</result>
+			<result name="pub">/qrcs/each/QRCodePub.jsp</result>
+			<result name="used">/qrcs/each/QRCodeUsedMng.jsp</result>
+		    <result name="file" type="stream">	
+			  <param name="inputName">inputStream</param>
+			  <param name="contentDisposition">
+			      attachment;filename="${filename}"
+			  </param> 
+    		</result>
+    			    
+			<result name="ref">/qrcs/each/QRCodeList.jsp</result>
+		
+		</action>		
+
+		<action name="QRBatchListAction" class="QRBatchListAction">
+			<result name="success">/qrcs/batch/QRCodeContentsMng.jsp</result>
+			<result name="pub">/qrcs/batch/QRCodePub.jsp</result>
+			<result name="type">/qrcs/batch/QRCodeContentsMng.jsp</result>
+		</action>	
+		
+ 		<action name="QRSiteAction" class="QRSiteAction">
+			<result name="success">/qrcs/site/NoticeList.jsp</result>
+			<result name="notice">/qrcs/site/NoticeList.jsp</result>
+			<result name="admin">/qrcs/site/AdminMng.jsp</result>
+		</action>
+	
+			
+
+	</package>
+</struts>

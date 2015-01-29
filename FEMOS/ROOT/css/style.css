@@ -1,0 +1,57 @@
+@charset "utf-8";
+*{margin:0; padding:0;}
+*  html, body {height: 100%}
+body {font-family:'dotum';font-size:12px;letter-spacing:-0.01em;color:#000;}
+body A:link { text-decoration: none;COLOR: #666}
+body A:visited { text-decoration: none;COLOR: #666}
+body A:active  {text-decoration: none;COLOR: #666}
+body A:hover  { text-decoration: underline;COLOR: #ee7a90}
+img {border:none}
+
+/**전체레이아웃 설정**/
+#layout_wrap{width:900px; height:630px; border-bottom:#6f7f83 solid 10px}
+#layout_top{width:900px;height:80px; float:left; background-color:#7ba3b0; border-bottom:#6f7f83 solid 10px}
+#layout_top .area{position: absolute;overflow-x:hidden; overflow-y:hidden; top:205px; left:295px; width:640px; height:60px; border-right:#6c858b solid 1px; border-bottom:#6c858b solid 1px;background: url(../img/bg_01.gif)}
+#layout_top .area ul{list-style:none; margin:0; padding:0;}
+#layout_top .area li{float:left; margin-left:20px}
+#layout_top h3{float:left; margin:33px 20px}
+#layout_top p{float:left; margin:10px 10px}
+#layout_top p.btn_left{position: absolute; top:0; left:100px}
+#layout_top p.btn_right{position: absolute; top:205; left:935px}
+#layout_top p.btn_allArea{position: absolute; top:205; left:970px}
+#layout_body{width:680px;height:540px; float:left; background-color:#fff; border-right:#6f7f83 solid 10px}
+
+/* 배경이 필요없기 때문에 수정 */
+#layout_body .layout{width:660px; height:520px;float:left; border-right:#ececec solid 1px; border-bottom:#ececec solid 1px;margin:10px}
+
+#layout_body .head{width:60px; height:16px;float:left;font-weight:bold; text-align:center; padding-top:4px}
+#layout_body .button{width:150px; text-align:right; height:20px;float:right;font-weight:bold;}
+#layout_right{width:210px;height:540px; float:left; background-color:#e2ecef}
+#layout_right h3{margin-left:20px; margin-top:10px}
+
+/**탭메뉴박스 설정**/
+#tablist{padding: 5px 0; margin:10px 0px 0px 20px}
+#tablist li{list-style: none;display: inline;margin: 0;}
+#tablist li a{padding:6px 20px 6px 20px;border-top:#7ba3b0 solid 1px; border-right:#7ba3b0 solid 1px; border-left:#7ba3b0 solid 1px; font-weight:bold}
+#tablist li a:link, #tablist li a:visited{}
+#tablist li a.current{ background-color:#FFF;border-top:#7ba3b0 solid 1px; border-right:#7ba3b0 solid 1px; border-left:#7ba3b0 solid 1px; font-weight:bold;}
+
+/**내용이 보여질 박스 설정**/
+/* #tabcontentcontainer{width: 160px; height:460px;border:#7ba3b0 solid 1px;background: url(../img/bg_0311.gif); margin-left:20px} */
+#tabcontentcontainer{width: 160px; height:460px;border:#7ba3b0 solid 1px;margin-left:20px}
+
+.tabcontent{display:none;}
+.tabcontent h4{padding-left:20px; padding-top:20px; padding-bottom:8px}
+.tabcontent ul{list-style:none; margin:0; padding:0}
+.tabcontent ul li{width:60px; height:60px; float:left; margin-left:10px;margin-right:10px; margin-top:20px; text-align:center}
+.tabcontent ul li img{padding-bottom:3px}
+.tabcontent ul li font{ background-color:#FFF; margin-top:6px; font-size:11px;}
+.line{width:100px; background-color:#FFF;border:#d6d6d6 solid 1px ; overflow:auto; margin-left:20px}
+.line ul{list-style:none; margin:0; padding:0px 10px}
+.line ul li{float:left; margin:5px; width:auto; height:auto}
+.line ul li img{padding:0}
+
+
+
+
+

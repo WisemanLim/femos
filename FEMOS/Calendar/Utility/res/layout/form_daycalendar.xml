@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent" android:layout_height="fill_parent"
+  android:orientation="vertical">
+  <LinearLayout android:layout_width="fill_parent" android:layout_height="100px">
+  	<ImageView
+		android:id="@+id/imgMonth"
+		android:layout_width="50px"  android:layout_height="fill_parent"
+		
+		android:clickable="true" android:onClick="onClickMonth"/>
+  	<ImageView
+		android:id="@+id/imgLeftArrow"
+		android:layout_width="30px"  android:layout_height="fill_parent"
+		
+		android:clickable="true" android:onClick="onClickMonth"/>
+  	<ImageView
+		android:id="@+id/imgDay"
+		android:layout_width="90px"  android:layout_height="fill_parent"
+		android:clickable="true" android:onClick="onClickMonth"/>
+  	<ImageView
+		android:id="@+id/imgRightArrow"
+		android:layout_width="30px"  android:layout_height="fill_parent"
+		android:clickable="true" android:onClick="onClickMonth"/>
+  </LinearLayout>
+  <FrameLayout android:layout_width="fill_parent" android:layout_height="80px">
+  	<ImageView
+		android:id="@+id/btnLeft"
+		android:layout_width="40px"  android:layout_height="wrap_content"
+		android:clickable="true" android:onClick="onClickTodayButton"
+		android:layout_gravity="top|left" android:layout_marginLeft="5px"/>
+	
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" 
+			  android:orientation="vertical">	  	
+	  	<TextView
+	  		android:id="@+id/TextView_up"  
+			android:text="title_bookview_up"
+			android:layout_width="wrap_content" android:layout_height="0dip"
+			android:layout_weight="1" 
+			android:textStyle="bold"
+			android:textColor="#ffffff" android:textSize="17px"
+			android:singleLine="true" 
+			android:layout_gravity="center"/>
+					
+		<TextView
+			android:id="@+id/TextView_down" 
+			android:text="title_bookview_bottom" 
+			android:layout_width="wrap_content" android:layout_height="0dip"
+			android:layout_weight="1"
+			android:textColor="#ffffff" android:textSize="15px"
+			android:singleLine="true"
+			android:layout_gravity="center"/>
+	</LinearLayout>
+	
+  </FrameLayout>
+  
+</LinearLayout>

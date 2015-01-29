@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+           "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="NameSpace">
+
+
+ 	<update id="cPubQrDetail" parameterClass="qrcs.each.vo.QRCodeDetailVo" >
+		<![CDATA[INSERT INTO TBL_QR_EACH_CODE
+		( SEQ, CONTENTS_TYPE, PUBLISHER, PUBLISH_DATE, PUBLISH_QRCODE_IMAGE_URL,
+		IS_USED, BARCODE_TYPE, ERROR_CORRECTION,CHARACTER_ENCODING, REGISTERED_DATE )
+		SELECT NVL(MAX(SEQ), 0) + 1 AS SEQ
+		, #contents_type#, #publisher#, SYSDATE
+		, #imgURL#, #isUsed#, #barCodeType#, 0, #characterEncoding#, SYSDATE
+		FROM TBL_QR_EACH_CODE ]]>
+	</update> 
+	
+	<resultMap id="resultQrPubList" class="qrcs.each.vo.QRCodeListVo">
+		<result property="seq" column="SEQ" />
+		<result property="contents_type" column="CONTENTS_TYPE" />	
+		<result property="publisher" column="PUBLISHER" />
+		<result property="publisherDate" column="PUBLISH_DATE" />
+		<result property="imgURL" column="PUBLISH_QRCODE_IMAGE_URL" />
+		<result property="isUsed" column="IS_USED" />		
+	</resultMap>
+	
+	<select id="rPubQrDetail" resultMap="resultQrPubList" parameterClass="java.lang.Integer">              
+              SELECT  SEQ, CONTENTS_TYPE, PUBLISHER, PUBLISH_DATE,  PUBLISH_QRCODE_IMAGE_URL, IS_USED  FROM (
+                   SELECT ROWNUM AS RNUM,   SEQ, CONTENTS_TYPE, PUBLISHER, PUBLISH_DATE,  PUBLISH_QRCODE_IMAGE_URL, IS_USED FROM (
+                                             SELECT SEQ, CONTENTS_TYPE, PUBLISHER, PUBLISH_DATE,  PUBLISH_QRCODE_IMAGE_URL, IS_USED 
+                                             FROM TBL_QR_EACH_CODE   
+                                             ORDER BY PUBLISH_DATE DESC
+                   ) A WHERE ROWNUM &lt;= (#page# * 10)+1                   
+              ) WHERE RNUM &gt;(((#page# - 1) * 10) + 1)
+	</select>
+	
+	<select id="rPubQrTotalPage" resultClass="java.lang.String">
+		select count(*) from TBL_QR_EACH_CODE
+	</select>
+	 
+	<update id="uPubQrList" parameterClass="qrcs.each.action.QRCodeRecord">
+	   UPDATE  TBL_QR_EACH_CODE 
+	   SET IS_USED = #used#
+	   WHERE PUBLISHER= #publisher# AND TO_CHAR(PUBLISH_DATE, 'YYYYMMDD') between #startDate#  and #endDate#
+	</update>
+
+	<insert id="cinsertBatchContent"  parameterClass="qrcs.batch.vo.QRCodeBatchVo"  >
+ 	  INSERT INTO TBL_QR_CONTENTS_MASTER (CONTENTS_TYPE, SEQ, MANDATORY_FIELD, DEFAULT_VALUE, IS_USED,  REGISTERED_DATE, MODIFIED_DATE)
+      SELECT #contents_type#, NVL(MAX(SEQ), 0) + 1 AS SEQ, #required#, #defulltValue#, #used#, SYSDATE, SYSDATE
+      FROM TBL_QR_CONTENTS_MASTER       
+    </insert>
+    
+    <select id="rBatchContentCount" parameterClass="java.lang.String" resultClass="java.lang.Integer">
+		SELECT count(*)
+		FROM  TBL_QR_CONTENTS_MASTER
+		WHERE CONTENTS_TYPE = #contents_type#
+	</select>
+
+	<resultMap id="resultBatchList" class="qrcs.batch.vo.QRCodeBatchListVo">
+		<result property="seq" column="SEQ" />
+		<result property="required" column="MANDATORY_FIELD" />	
+		<result property="defulltValue" column="DEFAULT_VALUE" />
+		<result property="used" column="IS_USED" />
+	</resultMap>
+
+
+    <select id="rBatchContentlist" parameterClass="java.lang.String" resultMap="resultBatchList">
+		SELECT SEQ, MANDATORY_FIELD, DEFAULT_VALUE, IS_USED
+		FROM  TBL_QR_CONTENTS_MASTER
+		WHERE CONTENTS_TYPE = #contents_type#
+	</select>
+	
+	<delete id="dBatchContentlist" parameterClass="java.lang.Integer">
+		DELETE FROM TBL_QR_CONTENTS_MASTER WHERE SEQ = #seq#
+	</delete>
+  
+    <select id="rBatchContent" parameterClass="qrcs.batch.vo.QRCodeBatchVo" resultMap="resultBatchList">
+		SELECT SEQ, MANDATORY_FIELD, DEFAULT_VALUE, IS_USED
+		FROM  TBL_QR_CONTENTS_MASTER
+		WHERE CONTENTS_TYPE = #contents_type# AND SEQ = #seq#
+	</select>   
+	
+	
+<!--  	<insert id="cPubBatchlist" parameterClass="qrcs.each.vo.QRCodeDetailVo" >
+  		<selectKey resultClass="long" keyProperty="sub_seq">
+    	SELECT SQ_BATCH_SUB_COUNT.NEXTVAL FROM DUAL
+  		</selectKey>
+		<![CDATA[INSERT INTO TBL_QR_BATCH_CODE
+		( SEQ, CONTENTS_TYPE, PUBLISHER, PUBLISH_DATE, PUBLISH_QRCODE_IMAGE_URL,
+		IS_USED, BARCODE_TYPE, ERROR_CORRECTION,CHARACTER_ENCODING, REGISTERED_DATE, SUB_SEQ, PUBLISH_COUNT )
+		SELECT #seq#
+		, #contents_type#, #publisher#, SYSDATE
+		, #imgURL#, #isUsed#, #barCodeType#, 0, #characterEncoding#, SYSDATE, #sub_seq#, #publishCount#
+		FROM TBL_QR_BATCH_CODE ]]>
+		<![CDATA[
+		INSERT INTO TBL_QR_BATCH_CODE
+		    ( SEQ, CONTENTS_TYPE, SUB_SEQ, PUBLISHER, PUBLISH_DATE, PUBLISH_QRCODE_IMAGE_URL,
+		      IS_USED, BARCODE_TYPE, ERROR_CORRECTION,CHARACTER_ENCODING, REGISTERED_DATE, PUBLISH_COUNT )
+		SELECT #seq#, #contents_type#, NVL(MAX(SUB_SEQ), 0) + 1 AS SUB_SEQ, #publisher#, SYSDATE
+		     , #imgURL#, #isUsed#, #barCodeType#, 0, #characterEncoding#, SYSDATE, #publishCount#
+		FROM TBL_QR_BATCH_CODE
+		WHERE SEQ = #seq# AND CONTENTS_TYPE = #contents_type#
+		]]>
+	</insert> -->
+	
+	<insert id="cPubBatchlist" parameterClass="qrcs.each.vo.QRCodeDetailVo" >
+          <!-- <selectKey resultClass="long" keyProperty="sub_seq">
+        SELECT SQ_BATCH_SUB_COUNT.NEXTVAL FROM DUAL
+          </selectKey>
+        <![CDATA[INSERT INTO TBL_QR_BATCH_CODE
+        ( SEQ, CONTENTS_TYPE, PUBLISHER, PUBLISH_DATE, PUBLISH_QRCODE_IMAGE_URL,
+        IS_USED, BARCODE_TYPE, ERROR_CORRECTION,CHARACTER_ENCODING, REGISTERED_DATE, SUB_SEQ, PUBLISH_COUNT )
+        SELECT #seq#
+        , #contents_type#, #publisher#, SYSDATE
+        , #imgURL#, #isUsed#, #barCodeType#, 0, #characterEncoding#, SYSDATE, #sub_seq#, #publishCount#
+        FROM TBL_QR_BATCH_CODE ]]> -->
+        <![CDATA[
+        INSERT INTO TBL_QR_BATCH_CODE
+            ( SEQ, CONTENTS_TYPE, SUB_SEQ, PUBLISHER, PUBLISH_DATE, PUBLISH_QRCODE_IMAGE_URL,
+              IS_USED, BARCODE_TYPE, ERROR_CORRECTION,CHARACTER_ENCODING, REGISTERED_DATE, PUBLISH_COUNT )
+        SELECT #seq#, #contents_type#, (A.SUB_SEQ + B.NUM) AS SUB_SEQ, 'admin', SYSDATE
+             , '.png', #isUsed#, #barCodeType#, 0, #characterEncoding#, SYSDATE, B.NUM AS PUBLISH_COUNT
+        FROM (
+        SELECT NVL(MAX(SUB_SEQ), 0) AS SUB_SEQ
+        FROM TBL_QR_BATCH_CODE
+        WHERE SEQ = #seq# AND CONTENTS_TYPE = #contents_type#
+        ) A, ( SELECT NUM FROM TBL_NUM WHERE NUM BETWEEN 1 AND #publishCount# ) B
+        ]]>
+    </insert>
+	
+	
+
+	<select id="rPubBatchTotalPage" resultClass="java.lang.String" parameterClass="qrcs.batch.vo.QRCodeBatchVo">
+		select count(*) from TBL_QR_BATCH_CODE WHERE SEQ = #seq# AND TO_CHAR(PUBLISH_DATE, 'YYYYMMDD') between #startDate#  and #endDate# 
+	</select>
+	
+	<select id="rPubBatchList" resultMap="resultQrPubList" parameterClass="qrcs.batch.vo.QRCodeBatchVo">              
+               SELECT  SEQ, CONTENTS_TYPE, PUBLISHER, PUBLISH_DATE,  PUBLISH_QRCODE_IMAGE_URL, IS_USED  FROM (
+                   SELECT ROWNUM AS SEQ, SEQ AS SEQ_, CONTENTS_TYPE, PUBLISHER, PUBLISH_DATE,  PUBLISH_QRCODE_IMAGE_URL, IS_USED FROM (
+                                             SELECT SEQ, CONTENTS_TYPE, PUBLISHER, PUBLISH_DATE,  PUBLISH_QRCODE_IMAGE_URL, IS_USED 
+                                             FROM TBL_QR_BATCH_CODE   
+                                             ORDER BY PUBLISH_DATE DESC
+                   ) A WHERE SEQ = #seq# AND TO_CHAR(PUBLISH_DATE, 'YYYYMMDD') between #startDate#  and #endDate#                  
+              ) WHERE SEQ BETWEEN (((#currentPage# - 1) * 10) + 1) AND #currentPage# * 10
+	</select>
+	
+	<select id="rPubBatchCurrent" resultClass="java.lang.Integer" parameterClass="qrcs.each.vo.QRCodeDetailVo">
+        select (NVL(MAX(SUB_SEQ), 0) - #publishCount# + 1)  from TBL_QR_BATCH_CODE
+        WHERE SEQ = #seq# AND CONTENTS_TYPE = #contents_type#
+    </select>
+	
+	<update id="uPubBatchlist" parameterClass="qrcs.each.vo.QRCodeDetailVo" >
+        <![CDATA[
+        UPDATE TBL_QR_BATCH_CODE
+        SET PUBLISH_QRCODE_IMAGE_URL = #imgURL#
+          , MODIFIED_DATE = SYSDATE
+        WHERE SEQ = #seq# AND CONTENTS_TYPE = #contents_type# AND SUB_SEQ = #subSeq#
+        ]]>
+    </update>
+</sqlMap>

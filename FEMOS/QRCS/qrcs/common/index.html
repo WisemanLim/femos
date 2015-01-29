@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery-1.6.2.js"></script> 
+<script src="js/jquery.ui.core.js"></script> 
+<script src="./js/common.js" type="text/javascript"></script>
+<title>QRCS</title>
+<script type="text/javascript"> 
+
+function specialCheck(f)
+{
+	
+	var limit_char = /[@%()~!\#$^&*\=+|:;?"<,.>']/;
+	  if(limit_char.test(f.value)) {
+	   alert('특수문자는 삭제 됩니다.');
+	   f.value = f.value.split(limit_char).join("");
+	   
+	   }
+	 return;
+	
+}	
+
+function login_form()
+{
+
+
+    if (!document.login_form.id.value)
+    {
+        alert("Input ID");
+        document.login.id.focus();
+        return 0;
+    }
+    
+    if (!document.login_form.password.value)
+    {
+        alert("Input Password");
+        document.login.password.focus();
+        return 0;
+    }
+
+    
+	submit_ajax("login_form", "./LoginAction.action", "JSON", "LOGIN", $('#login_form'));
+	 
+}
+</script>
+
+</head>
+
+<body>
+<div id="wrap">
+<div id="header"><a href="javascript:void(0)"><img src="img/logo.gif" alt="main" width="174" height="48" border="0" /></a></div>
+<div id="content_login">
+<div id="login">
+<form name=login_form id=login_form >
+<p style="width:200px">
+              <input id=id name='id' class="input_login" type="text" value="" maxlength="12" onfocus="if(this.value=='ID'){this.value = '';this.type= 'text';}" 
+                onblur="if(this.value=='ID' || !this.value){this.type = 'text';}" onkeyup="specialCheck(this);"/>
+              <input id=password name='password' class="input_login" type="password" value="" maxlength="12" onfocus="if(this.value=='Password'){this.value = '';this.type= 'password';}" 
+                onblur="if(this.value=='Password' || !this.value){this.type = 'password';}" onkeyup="specialCheck(this);"/>
+		</p>
+      <p style="width:80px"><a href="javascript:login_form();"><img src="img/btn_login.gif" width="80" height="65" border="0" style="cursor:hand"  /></a></p>
+</form>
+    	<p style="margin-top:20px;width:100%"><a href="./RequestIdAction.action"><img src="img/btn_admin_call.gif" width="85" height="22" border="0" /></a> <a href="./FindIDPWAction.action"><img src="img/btn_ld_search.gif" width="94" height="22" border="0" /></a></p>
+    </div>
+
+</div>
+
+<div id="footer"><img src="img/footer.gif" width="800" height="20" /></div>
+</div>
+
+
+
+</body>
+</html>

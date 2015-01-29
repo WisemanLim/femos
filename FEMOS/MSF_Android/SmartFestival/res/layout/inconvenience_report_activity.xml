@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/navi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/navi_bar"
+        android:gravity="center"
+        android:text="불편신고"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btn_report"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/sel_write_confirm_btn" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_report"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/edit_box"
+        android:lines="3"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip" />
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/et_content"
+        android:layout_below="@id/navi"
+        android:layout_marginBottom="7dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="7dip"
+        android:scaleType="centerCrop" />
+
+</RelativeLayout>
